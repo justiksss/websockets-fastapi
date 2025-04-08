@@ -6,7 +6,7 @@ from fastapi import FastAPI
 
 
 class ShutdownManager:
-    def __init__(self, app: FastAPI, timeout: int = 5) -> None:
+    def __init__(self, app: FastAPI, timeout: int = 30) -> None:
         self.manager = app.state.connection_manager
 
         self.timeout = timedelta(seconds=timeout)
